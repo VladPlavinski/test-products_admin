@@ -4,17 +4,18 @@ import vue from '@vitejs/plugin-vue';
 
 export default defineConfig({
     server: {
+        host: true,
+        origin: 'http://localhost:5173',
+        cors: true,
         watch: {
-            usePolling: true
+            usePolling: true,
         },
-        hmr: {
-            host: 'localhost',
-        },
+        hmr: false,
     },
     plugins: [
         laravel({
             input: 'resources/js/app.js',
-            refresh: true,
+            refresh: false,
         }),
         vue({
             template: {
