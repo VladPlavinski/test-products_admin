@@ -13,6 +13,16 @@ Route::get('/', function () {
     ]);
 });
 
+Route::get('/products', function () {
+    return Inertia::render('Products', []);
+})->name('products');
+
+Route::get('/product/{id}', function ($id) {
+    return Inertia::render('Product', [
+        'id' => $id
+    ]);
+})->name('product');
+
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
