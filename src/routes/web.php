@@ -17,6 +17,10 @@ Route::get('/products', function () {
     return Inertia::render('Products', []);
 })->name('products');
 
+Route::get('/auth', function () {
+    return Inertia::render('Products', []);
+})->name('products');
+
 Route::get('/product/{id}', function ($id) {
     return Inertia::render('Product', [
         'id' => $id

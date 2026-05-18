@@ -134,13 +134,13 @@ onMounted(async () => {
                     </div>
                 </div>
             </div>
-            <div v-if="products.length" class="grid grid-cols-1 px-10 gap-3">
+            <div v-if="products.length" class="grid grid-cols-1 px-10 gap-5">
                 <ProductCard v-for="product in products" :product="product" />
             </div>
             <div v-if="!products.length" class="flex justify-center items-center py-10">
                 <p class="text-5xl text-gray-300">Товары не найдены</p>
             </div>
-            <Paginator v-if="products.length" :last-page="meta.last_page" :current-page="meta.current_page" @changePage="fetchProducts"/>
+            <Paginator v-if="products.length" :last-page="meta.last_page" :partSize="3" :current-page="meta.current_page" @changePage="fetchProducts"/>
         </div>
     </div>
 </template>

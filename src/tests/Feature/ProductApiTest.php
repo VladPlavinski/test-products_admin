@@ -53,7 +53,7 @@ class ProductApiTest extends TestCase
     {
         $product = $this->products->first();
 
-        $response = $this->getJson("/api/products/{$product->id}");
+        $response = $this->getJson("/api/product/{$product->id}");
 
         $response->assertStatus(200)
             ->assertJsonStructure([
@@ -76,7 +76,7 @@ class ProductApiTest extends TestCase
 
     public function test_returns_404_for_non_existent_product()
     {
-        $response = $this->getJson('/api/products/99999');
+        $response = $this->getJson('/api/product/99999');
 
         $response->assertStatus(404);
     }
@@ -85,7 +85,7 @@ class ProductApiTest extends TestCase
     {
         $product = $this->products->first();
 
-        $response = $this->getJson("/api/products/{$product->id}");
+        $response = $this->getJson("/api/product/{$product->id}");
 
         $response->assertStatus(200)
             ->assertJsonPath('data.category_id', $this->category->id)

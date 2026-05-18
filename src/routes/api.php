@@ -10,6 +10,6 @@ Route::get('/user', function (Request $request) {
 })->middleware('auth:sanctum');
 
 Route::get('/products', [ProductController::class, 'index'])->name('api.products.index');
-Route::get('/products/{id}', [ProductController::class, 'show'])->name('api.products.show');
+Route::get('/product/{id}', [ProductController::class, 'show'])->name('api.products.show');
 
 Route::get('/categories', [CategoryController::class, 'index'])->name('api.categories.index');
